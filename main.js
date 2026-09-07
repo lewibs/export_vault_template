@@ -200,10 +200,12 @@ module.exports = class VaultTemplateExporter extends Plugin {
       }
     }
 
-    // 3) .obsidian config — settings only, no machine state
+    // 3) .obsidian config — settings only, no machine state.
+    // core-plugins.json is intentionally omitted so a fresh vault uses Obsidian's
+    // core-plugin defaults (which also keeps Sync off).
     const rootConfig = [
-      'app.json', 'appearance.json', 'hotkeys.json', 'core-plugins.json',
-      'core-plugins-migration.json', 'templates.json', 'daily-notes.json',
+      'app.json', 'appearance.json', 'hotkeys.json',
+      'templates.json', 'daily-notes.json',
       'types.json', 'canvas.json',
     ];
     for (const name of rootConfig) await addPath(`${cfg}/${name}`);
