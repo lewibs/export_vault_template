@@ -8,7 +8,7 @@ const zlib = require('zlib');
 
 const DEFAULT_SETTINGS = {
   includeFolders: ['assets/templates'],
-  tagProperty: 'fresh_obsidian_seed',
+  tagProperty: 'vault_seed',
   includedPlugins: [],          // nothing included by default; opt in via settings checkboxes
   excludePluginData: true,
   outputName: '',               // empty => <vault>-template.zip
@@ -287,7 +287,7 @@ class ExporterSettingTab extends PluginSettingTab {
       .setDesc('Any note whose frontmatter has this property set to true is included.')
       .addText((t) =>
         t
-          .setPlaceholder('fresh_obsidian_seed')
+          .setPlaceholder('vault_seed')
           .setValue(this.plugin.settings.tagProperty)
           .onChange(async (v) => {
             this.plugin.settings.tagProperty = v;

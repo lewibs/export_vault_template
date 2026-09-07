@@ -8,7 +8,7 @@ preferred layout, with **no personal data**.
 
 - **Whitelisted folders** — whole directories you choose (e.g. `assets/templates`).
 - **Tagged notes** — any note whose frontmatter has your include property set to
-  `true` (default `fresh_obsidian_seed`).
+  `true` (default `vault_seed`).
 - **Selected plugins** — a checkbox list of every installed plugin; only the ones
   you check are shipped (code only). Each plugin's `data.json` is stripped by
   default so no personal state or secrets leak.
@@ -23,7 +23,7 @@ fresh vault enables exactly the plugins you picked — nothing dangling.
 1. Reload Obsidian after installing (Command palette → *Reload app without saving*).
 2. Configure in **Settings → Vault Template Exporter**:
    - Add **include folders**.
-   - Set the **include property** (default `fresh_obsidian_seed`).
+   - Set the **include property** (default `vault_seed`).
    - Check the **plugins** you want shipped (nothing is checked by default).
 3. Click the **download ribbon icon**, or run the command
    **“Export vault template to Downloads.”**
