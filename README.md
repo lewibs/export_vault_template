@@ -1,4 +1,4 @@
-# Obsidian Auto Seed (Vault Template Exporter)
+# Export Vault Template
 
 An Obsidian plugin that exports a clean **starter-vault template** as a zip into
 your Downloads folder — so you (or anyone) can spin up a fresh vault in your
