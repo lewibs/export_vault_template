@@ -248,14 +248,11 @@ class ExporterSettingTab extends PluginSettingTab {
     const { containerEl } = this;
     containerEl.empty();
 
-    containerEl.createEl('h2', { text: 'Vault Template Exporter' });
-
     // --- include folders ---
-    containerEl.createEl('h3', { text: 'Include folders' });
-    containerEl.createEl('p', {
-      text: 'Whole directories copied into the template (all files within).',
-      cls: 'setting-item-description',
-    });
+    new Setting(containerEl)
+      .setName('Include folders')
+      .setDesc('Whole directories copied into the template (all files within).')
+      .setHeading();
 
     this.plugin.settings.includeFolders.forEach((folder, i) => {
       new Setting(containerEl)
@@ -283,7 +280,7 @@ class ExporterSettingTab extends PluginSettingTab {
       }));
 
     // --- tagged files ---
-    containerEl.createEl('h3', { text: 'Tagged notes' });
+    new Setting(containerEl).setName('Tagged notes').setHeading();
     new Setting(containerEl)
       .setName('Include property')
       .setDesc('Any note whose frontmatter has this property set to true is included.')
@@ -297,7 +294,7 @@ class ExporterSettingTab extends PluginSettingTab {
           }));
 
     // --- output ---
-    containerEl.createEl('h3', { text: 'Output' });
+    new Setting(containerEl).setName('Output').setHeading();
     new Setting(containerEl)
       .setName('Zip file name')
       .setDesc('Saved to your Downloads folder. Leave blank for "<vault>-template.zip".')
@@ -320,11 +317,10 @@ class ExporterSettingTab extends PluginSettingTab {
         }));
 
     // --- plugin whitelist ---
-    containerEl.createEl('h3', { text: 'Plugins to include' });
-    containerEl.createEl('p', {
-      text: 'Only checked community plugins are shipped (code only). Uncheck anything personal or that auto-uploads.',
-      cls: 'setting-item-description',
-    });
+    new Setting(containerEl)
+      .setName('Plugins to include')
+      .setDesc('Only checked community plugins are shipped (code only). Uncheck anything personal or that auto-uploads.')
+      .setHeading();
 
     const manifests = Object.values(this.app.plugins.manifests)
       .filter((m) => m.id !== this.plugin.manifest.id)
