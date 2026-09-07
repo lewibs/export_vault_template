@@ -1,0 +1,9 @@
+{
+  "id": "vault-template-exporter",
+  "name": "Vault Template Exporter",
+  "version": "1.0.0",
+  "minAppVersion": "1.4.0",
+  "description": "Export a clean starter-vault template (whitelisted folders, tagged notes, and selected plugins with no personal data) as a zip into your Downloads folder.",
+  "author": "lewibs",
+  "isDesktopOnly": true
+}
